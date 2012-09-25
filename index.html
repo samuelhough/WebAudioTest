@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<style>
+			html, body {
+				padding: 0px;
+				margin: 0px;
+				background-color: black;
+			}
+			canvas {
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				margin: 0px;
+			}
+			#stage {
+				z-index: 10;
+			}
+		</style>
+	</head>
+	<body>
+			<canvas id="stage"></canvas>
+			
+			<canvas id="stage2"></canvas>
+			<script>
+				window.requestAnimFrame = (function(){
+					  return  window.requestAnimationFrame       || 
+							  window.webkitRequestAnimationFrame || 
+							  window.mozRequestAnimationFrame    || 
+							  window.oRequestAnimationFrame      || 
+							  window.msRequestAnimationFrame     || 
+							  function( callback ){
+								window.setTimeout(callback, 1000 / 60);
+							  };
+				})();
+			</script>
+			<script src="./libs/PubSub.js"></script>
+			<script src="./libs/SimpleMediator.js"></script>
+			
+			<audio id="music" src="AnabellaLee.mp3" preload="auto"></audio>
+			<script src="./app.js"></script>
+	</body>
+</html>
+	
